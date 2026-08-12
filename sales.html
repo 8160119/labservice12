@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продажа геодезического оборудования — ЛАБсервис</title>
+    <meta name="description" content="Купить тахеометр Leica, Sokkia, Topcon новый и б/у в Москве. Фильтры по бренду, точности, дальномеру. Гарантия сервиса.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>tailwind.config={theme:{extend:{fontFamily:{'inter':['Inter','sans-serif']},colors:{'brand':{'blue':'#2563eb','blue-hover':'#1d4ed8','blue-light':'#3b82f6','cyan':'#06b6d4','dark':'#0f172a','darker':'#020617','gray':'#1e293b','light':'#f0f9ff','sky':'#0ea5e9'}}}}}</script>
+    <style>
+        *{font-family:'Inter',sans-serif}
+        .fade-up{opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s}.fade-up.visible{opacity:1;transform:translateY(0)}
+        .blue-gradient{background:linear-gradient(135deg,#2563eb,#0ea5e9)}
+        .card-hover{transition:transform .3s,box-shadow .3s}.card-hover:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,.15)}
+        .tg-pulse{animation:tp 2s infinite}@keyframes tp{0%,100%{box-shadow:0 0 0 0 rgba(14,165,233,.4)}50%{box-shadow:0 0 0 15px rgba(14,165,233,0)}}
+        .burger-line{transition:all .3s}.menu-open .burger-line:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.menu-open .burger-line:nth-child(2){opacity:0}.menu-open .burger-line:nth-child(3){transform:rotate(-45deg) translate(7px,-6px)}
+        .filter-btn.active{background:#2563eb;color:#fff}
+        select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");background-position:right .5rem center;background-repeat:no-repeat;background-size:1.5em 1.5em;padding-right:2.5rem}
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-inter">
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16 lg:h-20">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="img/logo.png" alt="ЛАБсервис" class="h-10 w-auto" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="items-center space-x-1" style="display:none"><div class="w-10 h-10 blue-gradient rounded-lg flex items-center justify-center"><i class="fas fa-crosshairs text-white text-lg"></i></div><div><span class="text-white font-bold text-lg">ЛАБ</span><span class="text-brand-sky font-bold text-lg">сервис</span></div></div>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-6"><a href="sales.html" class="text-white font-semibold text-sm">Продажа</a><a href="rental.html" class="text-gray-300 hover:text-white text-sm font-medium">Аренда</a><a href="repair.html" class="text-gray-300 hover:text-white text-sm font-medium">Ремонт</a><a href="tradein.html" class="text-gray-300 hover:text-white text-sm font-medium">Trade-in</a><a href="about.html" class="text-gray-300 hover:text-white text-sm font-medium">О нас</a><a href="contacts.html" class="text-gray-300 hover:text-white text-sm font-medium">Контакты</a></nav>
+            <div class="hidden lg:flex items-center space-x-4"><a href="tel:+79339287878" class="text-white hover:text-brand-sky text-sm font-semibold"><i class="fas fa-phone mr-1"></i>+7 (933) 928-78-78</a><a href="contacts.html" class="bg-brand-blue hover:bg-brand-blue-hover text-white px-5 py-2.5 rounded-lg text-sm font-semibold">Заявка</a></div>
+            <button id="burgerBtn" class="lg:hidden flex flex-col space-y-1.5 p-2"><span class="burger-line block w-6 h-0.5 bg-white"></span><span class="burger-line block w-6 h-0.5 bg-white"></span><span class="burger-line block w-6 h-0.5 bg-white"></span></button>
+        </div></div>
+        <div id="mobileMenu" class="lg:hidden hidden bg-brand-dark border-t border-gray-700/50"><div class="px-4 py-4 space-y-3"><a href="sales.html" class="block text-white py-2 text-sm font-semibold">Продажа</a><a href="rental.html" class="block text-gray-300 py-2 text-sm">Аренда</a><a href="repair.html" class="block text-gray-300 py-2 text-sm">Ремонт</a><a href="tradein.html" class="block text-gray-300 py-2 text-sm">Trade-in</a><a href="about.html" class="block text-gray-300 py-2 text-sm">О нас</a><a href="contacts.html" class="block text-gray-300 py-2 text-sm">Контакты</a></div></div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Page Header -->
+        <section class="bg-brand-dark py-16 lg:py-24"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4"><a href="index.html" class="hover:text-white">Главная</a><i class="fas fa-chevron-right text-xs"></i><span class="text-gray-300">Продажа</span></div>
+            <h1 class="text-3xl lg:text-5xl font-bold text-white mb-4">Оборудование в продаже</h1>
+            <p class="text-gray-400 text-lg max-w-2xl">Новое и б/у геодезическое оборудование с гарантией сервиса ЛАБсервис</p>
+        </div></section>
+
+        <!-- КАТАЛОГ -->
+        <section class="py-12 lg:py-20 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- ===== ФИЛЬТРЫ ===== -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 lg:p-8 mb-10 fade-up">
+                    <div class="flex flex-col lg:flex-row lg:items-end gap-4 lg:gap-6">
+                        <!-- Поиск -->
+                        <div class="flex-1">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Поиск</label>
+                            <div class="relative">
+                                <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                <input type="text" id="searchInput" placeholder="Название модели..." class="w-full border border-gray-200 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20">
+                            </div>
+                        </div>
+                        <!-- Бренд -->
+                        <div class="w-full lg:w-44">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Бренд</label>
+                            <select id="filterBrand" class="w-full border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-brand-blue">
+                                <option value="all">Все бренды</option>
+                                <option value="Leica">Leica</option>
+                                <option value="Sokkia">Sokkia</option>
+                                <option value="Topcon">Topcon</option>
+                                <option value="Trimble">Trimble</option>
+                                <option value="South">South</option>
+                            </select>
+                        </div>
+                        <!-- Тип -->
+                        <div class="w-full lg:w-44">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Тип</label>
+                            <select id="filterType" class="w-full border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-brand-blue">
+                                <option value="all">Все типы</option>
+                                <option value="Тахеометр">Тахеометры</option>
+                                <option value="GNSS">GNSS</option>
+                                <option value="Нивелир">Нивелиры</option>
+                                <option value="Контроллер">Контроллеры</option>
+                                <option value="Аксессуар">Аксессуары</option>
+                            </select>
+                        </div>
+                        <!-- Состояние -->
+                        <div class="w-full lg:w-40">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Состояние</label>
+                            <select id="filterCondition" class="w-full border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-brand-blue">
+                                <option value="all">Все</option>
+                                <option value="Новый">Новое</option>
+                                <option value="Б/У">Б/У</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Дополнительные фильтры -->
+                    <div class="flex flex-col lg:flex-row lg:items-end gap-4 lg:gap-6 mt-4">
+                        <!-- Точность -->
+                        <div class="w-full lg:w-48">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Угловая точность</label>
+                            <select id="filterAccuracy" class="w-full border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-brand-blue">
+                                <option value="all">Любая</option>
+                                <option value="1">1"</option>
+                                <option value="2">2"</option>
+                                <option value="3">3"</option>
+                                <option value="5">5"</option>
+                                <option value="7">7"</option>
+                            </select>
+                        </div>
+                        <!-- Дальномер -->
+                        <div class="w-full lg:w-52">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Дальномер (без отражателя)</label>
+                            <select id="filterRange" class="w-full border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-brand-blue">
+                                <option value="all">Любой</option>
+                                <option value="300">от 300м</option>
+                                <option value="500">от 500м</option>
+                                <option value="1000">от 1000м</option>
+                            </select>
+                        </div>
+                        <!-- Сортировка -->
+                        <div class="w-full lg:w-52">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Сортировка</label>
+                            <select id="sortBy" class="w-full border border-gray-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:border-brand-blue">
+                                <option value="default">По умолчанию</option>
+                                <option value="price-asc">Цена: сначала дешёвые</option>
+                                <option value="price-desc">Цена: сначала дорогие</option>
+                                <option value="name-asc">Название: А-Я</option>
+                                <option value="accuracy-asc">Точность: от лучшей</option>
+                            </select>
+                        </div>
+                        <!-- Сброс -->
+                        <div>
+                            <button onclick="resetFilters()" class="w-full lg:w-auto border border-gray-300 text-gray-600 hover:bg-gray-50 px-6 py-3 rounded-xl font-medium transition-all whitespace-nowrap">
+                                <i class="fas fa-times mr-2"></i>Сбросить
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Счётчик -->
+                    <div class="mt-4 text-sm text-gray-500">
+                        Найдено: <span id="resultsCount" class="font-semibold text-brand-blue">0</span> приборов
+                    </div>
+                </div>
+
+                <!-- ===== КАРТОЧКИ ТОВАРОВ ===== -->
+                <div id="catalogGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Генерируется через JS -->
+                </div>
+
+                <!-- Если ничего не найдено -->
+                <div id="noResults" class="hidden text-center py-16">
+                    <i class="fas fa-search text-gray-300 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-400 mb-2">Ничего не найдено</h3>
+                    <p class="text-gray-400">Попробуйте изменить параметры фильтров</p>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mt-16 fade-up">
+                    <div class="bg-white rounded-2xl p-10 shadow-lg max-w-2xl mx-auto">
+                        <h3 class="text-2xl font-bold text-brand-dark mb-3">Не нашли нужную модель?</h3>
+                        <p class="text-gray-500 mb-6">Напишите нам — подберём оборудование под вашу задачу</p>
+                        <a href="https://t.me/LAB_SERV1CE" target="_blank" class="blue-gradient hover:opacity-90 text-white px-8 py-4 rounded-xl font-semibold inline-block"><i class="fab fa-telegram mr-2"></i>Написать в Telegram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-darker pt-16 pb-8"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div>
+                <div class="flex items-center space-x-2 mb-4"><img src="img/logo.png" alt="ЛАБсервис" class="h-8 w-auto" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="items-center space-x-1" style="display:none"><div class="w-8 h-8 blue-gradient rounded-lg flex items-center justify-center"><i class="fas fa-crosshairs text-white text-sm"></i></div><div><span class="text-white font-bold">ЛАБ</span><span class="text-brand-sky font-bold">сервис</span></div></div></div>
+                <p class="text-gray-500 text-sm mb-4">Сервис геодезического оборудования.</p>
+                <div class="flex items-center gap-3">
+                    <a href="https://t.me/LAB_SERV1CE" target="_blank" class="w-10 h-10 bg-sky-500/20 rounded-lg flex items-center justify-center hover:bg-sky-500/30" title="Telegram"><i class="fab fa-telegram text-sky-400 text-lg"></i></a>
+                    <a href="https://vk.com/labservice" target="_blank" class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center hover:bg-blue-500/30" title="VK / MAX"><i class="fab fa-vk text-blue-400 text-lg"></i></a>
+                </div>
+            </div>
+            <div><h4 class="text-white font-semibold mb-4">Страницы</h4><div class="space-y-2"><a href="sales.html" class="block text-gray-500 hover:text-white text-sm">Продажа</a><a href="rental.html" class="block text-gray-500 hover:text-white text-sm">Аренда</a><a href="repair.html" class="block text-gray-500 hover:text-white text-sm">Ремонт</a><a href="tradein.html" class="block text-gray-500 hover:text-white text-sm">Trade-in</a></div></div>
+            <div><h4 class="text-white font-semibold mb-4">Услуги</h4><div class="space-y-2"><a href="repair.html" class="block text-gray-500 hover:text-white text-sm">Диагностика</a><a href="repair.html" class="block text-gray-500 hover:text-white text-sm">Юстировка</a><a href="repair.html" class="block text-gray-500 hover:text-white text-sm">Поверка</a></div></div>
+            <div><h4 class="text-white font-semibold mb-4">Контакты</h4><div class="space-y-2"><a href="tel:+79339287878" class="block text-gray-500 hover:text-white text-sm"><i class="fas fa-phone mr-2"></i>+7 (933) 928-78-78</a><a href="https://t.me/LAB_SERV1CE" target="_blank" class="block text-gray-500 hover:text-white text-sm"><i class="fab fa-telegram mr-2"></i>Telegram</a><a href="mailto:labserviceru@mail.ru" class="block text-gray-500 hover:text-white text-sm"><i class="fas fa-envelope mr-2"></i>labserviceru@mail.ru</a></div></div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center"><p class="text-gray-600 text-sm">© 2025 ЛАБсервис</p></div>
+    </div></footer>
+
+    <a href="https://t.me/LAB_SERV1CE" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center shadow-2xl z-50 tg-pulse"><i class="fab fa-telegram text-white text-3xl"></i></a>
+
+    <script>
+        // Burger menu
+        document.getElementById('burgerBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden');this.classList.toggle('menu-open')});
+
+        // Scroll animations
+        const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.1});
+        document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+        // ===== КАТАЛОГ ДАННЫХ =====
+        const products = [
+            { id:1, name:'Leica TS07 R500', brand:'Leica', type:'Тахеометр', condition:'Новый', price:0, priceText:'Запросить цену', accuracy:3, range:500, desc:'Угловая точность 3". Дальномер 500м без отражателя. Клавиатура, цветной дисплей.', img:'img/ts07.jpg' },
+            { id:2, name:'Leica TS06 Plus 5" R500', brand:'Leica', type:'Тахеометр', condition:'Б/У', price:350000, priceText:'от 350 000 ₽', accuracy:5, range:500, desc:'Проверен и юстирован. Комплект: кейс, 2 АКБ, зарядка, отражатель.', img:'img/ts06.jpg' },
+            { id:3, name:'Leica FlexLine TS10 1" R1000', brand:'Leica', type:'Тахеометр', condition:'Новый', price:0, priceText:'Запросить цену', accuracy:1, range:1000, desc:'Роботизированный. Автонаведение на призму. Дальномер 1000м.', img:'img/ts10.jpg' },
+            { id:4, name:'Leica TS09 Plus 3" R500', brand:'Leica', type:'Тахеометр', condition:'Б/У', price:480000, priceText:'от 480 000 ₽', accuracy:3, range:500, desc:'Отличное состояние. Юстирован. Полный комплект.', img:'img/ts09.jpg' },
+            { id:5, name:'Leica GS18T', brand:'Leica', type:'GNSS', condition:'Новый', price:0, priceText:'Запросить цену', accuracy:0, range:0, desc:'Наклонный GNSS с IMU-технологией. Измерения без пузырька.', img:'img/gs18t.jpg' },
+            { id:6, name:'Leica NA724', brand:'Leica', type:'Нивелир', condition:'Новый', price:45000, priceText:'от 45 000 ₽', accuracy:0, range:0, desc:'Оптический нивелир, увеличение 24x. Магнитный демпфер.', img:'img/na724.jpg' },
+            { id:7, name:'Leica CS20', brand:'Leica', type:'Контроллер', condition:'Новый', price:0, priceText:'Запросить цену', accuracy:0, range:0, desc:'Полевой контроллер с ПО Captivate. Сенсорный экран 3.5".', img:'img/cs20.jpg' },
+            { id:8, name:'Sokkia CX-105', brand:'Sokkia', type:'Тахеометр', condition:'Новый', price:0, priceText:'Запросить цену', accuracy:5, range:500, desc:'Угловая точность 5". Дальномер RED-tech 500м. Компактный.', img:'img/cx105.jpg' },
+            { id:9, name:'Sokkia CX-103', brand:'Sokkia', type:'Тахеометр', condition:'Б/У', price:280000, priceText:'от 280 000 ₽', accuracy:3, range:500, desc:'Хорошее состояние. Юстирован. Кейс, АКБ, зарядка.', img:'img/cx103.jpg' },
+            { id:10, name:'Topcon ES-105', brand:'Topcon', type:'Тахеометр', condition:'Новый', price:0, priceText:'Запросить цену', accuracy:5, range:500, desc:'Угловая точность 5". Дальномер 500м. Клавиатура с двух сторон.', img:'img/es105.jpg' },
+            { id:11, name:'Topcon GT-1001', brand:'Topcon', type:'Тахеометр', condition:'Б/У', price:550000, priceText:'от 550 000 ₽', accuracy:1, range:1000, desc:'Роботизированный. Точность 1". Дальномер 1000м. Отличное состояние.', img:'img/gt1001.jpg' },
+            { id:12, name:'Leica TS02 Plus 7" R500', brand:'Leica', type:'Тахеометр', condition:'Б/У', price:220000, priceText:'от 220 000 ₽', accuracy:7, range:500, desc:'Бюджетный вариант. Работоспособен, юстирован. Полный комплект.', img:'img/ts02.jpg' },
+            { id:13, name:'South NTS-362R6', brand:'South', type:'Тахеометр', condition:'Новый', price:195000, priceText:'от 195 000 ₽', accuracy:2, range:600, desc:'Угловая точность 2". Дальномер 600м. Доступная цена.', img:'img/south362.jpg' },
+            { id:14, name:'Trimble M3 DR5', brand:'Trimble', type:'Тахеометр', condition:'Б/У', price:310000, priceText:'от 310 000 ₽', accuracy:5, range:300, desc:'Компактный. Точность 5". Дальномер 300м. Проверен.', img:'img/m3.jpg' },
+        ];
+
+        // ===== РЕНДЕР КАТАЛОГА =====
+        function renderCatalog() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const brand = document.getElementById('filterBrand').value;
+            const type = document.getElementById('filterType').value;
+            const condition = document.getElementById('filterCondition').value;
+            const accuracy = document.getElementById('filterAccuracy').value;
+            const range = document.getElementById('filterRange').value;
+            const sort = document.getElementById('sortBy').value;
+
+            let filtered = products.filter(p => {
+                if (search && !p.name.toLowerCase().includes(search) && !p.desc.toLowerCase().includes(search)) return false;
+                if (brand !== 'all' && p.brand !== brand) return false;
+                if (type !== 'all' && p.type !== type) return false;
+                if (condition !== 'all' && p.condition !== condition) return false;
+                if (accuracy !== 'all' && p.accuracy !== parseInt(accuracy)) return false;
+                if (range !== 'all' && p.range < parseInt(range)) return false;
+                return true;
+            });
+
+            // Sort
+            switch(sort) {
+                case 'price-asc': filtered.sort((a,b) => (a.price || 9999999) - (b.price || 9999999)); break;
+                case 'price-desc': filtered.sort((a,b) => (b.price || 0) - (a.price || 0)); break;
+                case 'name-asc': filtered.sort((a,b) => a.name.localeCompare(b.name)); break;
+                case 'accuracy-asc': filtered.sort((a,b) => (a.accuracy || 999) - (b.accuracy || 999)); break;
+            }
+
+            document.getElementById('resultsCount').textContent = filtered.length;
+            document.getElementById('noResults').classList.toggle('hidden', filtered.length > 0);
+
+            const grid = document.getElementById('catalogGrid');
+            grid.innerHTML = filtered.map(p => `
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="bg-gray-100 h-56 flex items-center justify-center relative overflow-hidden">
+                        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="items-center justify-center" style="display:none">
+                            <i class="fas fa-camera text-gray-300 text-5xl"></i>
+                        </div>
+                        <span class="absolute top-4 left-4 ${p.condition === 'Новый' ? 'bg-green-500' : 'bg-amber-500'} text-white text-xs font-bold px-3 py-1 rounded-full">${p.condition}</span>
+                        <span class="absolute top-4 right-4 bg-brand-dark/70 text-white text-xs font-medium px-2 py-1 rounded-full">${p.brand}</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs text-gray-400">${p.type}</span>
+                            ${p.accuracy ? `<span class="text-xs bg-blue-50 text-brand-blue px-2 py-0.5 rounded-full font-medium">${p.accuracy}"</span>` : ''}
+                            ${p.range ? `<span class="text-xs bg-cyan-50 text-cyan-600 px-2 py-0.5 rounded-full font-medium">${p.range}м</span>` : ''}
+                        </div>
+                        <h3 class="font-bold text-lg text-brand-dark mb-2">${p.name}</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">${p.desc}</p>
+                        <span class="text-brand-blue font-bold text-xl block mb-4">${p.priceText}</span>
+                        <a href="https://t.me/LAB_SERV1CE" target="_blank"
+                           class="block w-full bg-brand-blue hover:bg-brand-blue-hover text-white py-3 rounded-xl font-semibold text-center text-sm transition-all">
+                            <i class="fab fa-telegram mr-1"></i> Получить предложение
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('filterBrand').value = 'all';
+            document.getElementById('filterType').value = 'all';
+            document.getElementById('filterCondition').value = 'all';
+            document.getElementById('filterAccuracy').value = 'all';
+            document.getElementById('filterRange').value = 'all';
+            document.getElementById('sortBy').value = 'default';
+            renderCatalog();
+        }
+
+        // Event listeners
+        ['searchInput'].forEach(id => document.getElementById(id).addEventListener('input', renderCatalog));
+        ['filterBrand','filterType','filterCondition','filterAccuracy','filterRange','sortBy'].forEach(id =>
+            document.getElementById(id).addEventListener('change', renderCatalog));
+
+        // Initial render
+        renderCatalog();
+    </script>
+</body>
+</html>
